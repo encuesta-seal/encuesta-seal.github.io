@@ -1,0 +1,129 @@
+<html>
+<head>
+
+	<style>
+		h1 {
+		  text-align: center;
+		}	
+	</style>
+	
+	<h1>Encuesta de calidad - SEAL</h1>
+	
+
+</head>
+<div>
+	<img alt="" src=""/>
+</div>
+<style type="text/css">
+	.five9-chat-button {
+	/* font-size: 24px !important; */
+	}
+	/* .five9-chat-button:after {
+	content: " Now" !important;
+	} */
+	/* #five9-popout-button {
+	float: right;
+  	} */
+	.five9-chat-button:before {
+		display: inline-block !important;
+	}
+	.five9-chat-button {
+		display: flex;
+		background: linear-gradient(#005DA4, #005DA4) !important;
+		justify-content: flex-end;
+		height: 28px;
+	}
+	.message-container{
+		background-color: #355FA1!important;
+		box-shadow: 0 1px 0 #006663 !important;
+	}
+
+	.five9-chat-button .five9-icon{
+		display: inline-block;
+		position: absolute;
+		left: 6px;
+		top: 4px;
+		width: 100px;
+		height: 30px;
+		background-image: url('https://firebasestorage.googleapis.com/v0/b/atento-data.appspot.com/o/Logos%2Fseal.png?alt=media&token=b1514b62-4bf1-4638-8311-00adf5f32124');
+		background-repeat: no-repeat;
+		background-size: 95px 29px;
+		background-position: center center;
+		margin: 0;
+		padding: 0;
+		border-radius: 7px;
+	}
+	div.loading-image {
+		margin-top: 30px !important;
+	}
+	#template-thank-you-message{
+		margin-top: 53px;
+	}
+</style>
+<body>
+
+<script src="https://app.five9.com/consoles/SocialWidget/five9-social-widget.min.js"></script>
+<script>
+var options = {
+	"rootUrl": "https://app.five9.com/consoles/",
+	"type": "chat",
+	"title": " ",
+	"tenant": "Atento - FONAFE",
+	"profiles": "ENCUESTA_CHAT_SEAL",
+	"showProfiles": false,
+	"autostart": true,
+	"theme": "https://firebasestorage.googleapis.com/v0/b/atento-data.appspot.com/o/Custom%20Themes%2Fseal-theme.css?alt=media&token=d280065e-549e-42a0-8237-62c77b73664c",
+	"surveyOptions": {
+		"showComment": false,
+		"requireComment": false
+	},
+	"fields": {
+		"name": {
+			"value": "",
+			"show": false,
+			"label": "Name"
+		},
+		"email": {
+			"value": "",
+			"show": false,
+			"label": "Email"
+		},
+		"question":{
+			value: "¡Hola!"
+		}
+	},
+	"playSoundOnMessage": true,
+	"allowCustomerToControlSoundPlay": false,
+	"lang": "https://dventura-tsr.github.io/Files/SpanishLanguage2.js",
+	"showEmailButton": true,
+	"hideDuringAfterHours": false,
+	"useBusinessHours": true,
+	"showPrintButton": false,
+	"allowUsabilityMenu": false,
+	"enableCallback": false,
+	"callbackList": "",
+	"allowRequestLiveAgent": true
+};
+Five9SocialWidget.addWidget(options);
+
+var target = document.body;
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.addedNodes.length && mutation.addedNodes[0].className === 'five9-frame') {
+      console.log("Mutation detected that Five9 Widget was added", mutation);
+      document.getElementsByClassName('five9-text')[0].innerText = "Custom Mini'd";
+      document.getElementsByClassName('five9-text')[1].innerText = "Custom Max'd";
+      //observer.disconnect();
+    }
+  });
+});
+
+var config = { attributes: false, childList: true, characterData: false };
+observer.observe(target, config);
+                  
+
+</script>
+
+
+</body>
+</html>
